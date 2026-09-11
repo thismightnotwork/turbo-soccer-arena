@@ -1,1 +1,84 @@
-PLACEHOLDER
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0f16" />
+<meta name="description" content="Turbo Soccer Arena - a free, unofficial fan-made car-soccer browser game inspired by Rocket League. Not affiliated with Psyonix or Epic Games." />
+<title>Turbo Soccer Arena (Fan Game)</title>
+<link rel="stylesheet" href="style.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene"></canvas>
+
+    <div id="hud">
+      <div id="scoreboard">
+        <div class="team blue"><span id="scoreBlue">0</span><small>BLUE</small></div>
+        <div id="timer">5:00</div>
+        <div class="team orange"><small>ORANGE</small><span id="scoreOrange">0</span></div>
+      </div>
+
+      <div id="goalBanner" class="hidden">GOAL!</div>
+
+      <div id="bottomBar">
+        <div id="boostWrap">
+          <div id="boostBar"><div id="boostFill"></div></div>
+          <span id="boostValue">33</span>
+        </div>
+        <div id="hints">WASD / Arrows: drive &middot; Space: jump / flip &middot; Shift: boost &middot; Ctrl: powerslide &middot; C: ball cam &middot; R: reset ball &middot; Esc: pause</div>
+      </div>
+    </div>
+
+    <div id="menu" class="overlay">
+      <div class="panel">
+        <h1>TURBO <span>SOCCER</span> ARENA</h1>
+        <p class="tagline">Rocket-powered car soccer &mdash; drive, boost, jump, and smash the ball into the net.</p>
+        <button id="playBtn">PLAY MATCH</button>
+        <div class="controls-grid">
+          <div><b>Move</b><br/>W A S D / Arrow Keys</div>
+          <div><b>Jump / Flip</b><br/>Space (tap twice)</div>
+          <div><b>Boost</b><br/>Left Shift</div>
+          <div><b>Powerslide</b><br/>Left Ctrl</div>
+          <div><b>Ball Cam</b><br/>C</div>
+          <div><b>Pause</b><br/>Esc</div>
+        </div>
+        <p class="disclaimer">
+          <strong>Fan-made tribute &mdash; not the real thing.</strong><br/>
+          Turbo Soccer Arena is an independent, non-commercial fan project inspired by car-soccer
+          games such as Rocket League&reg;. It is <strong>not affiliated with, endorsed by, or sponsored by
+          Psyonix, Epic Games, or any related company</strong>. All trademarks belong to their respective owners.
+          This is an original codebase with original art, built purely for fun and learning.
+        </p>
+      </div>
+    </div>
+
+    <div id="pause" class="overlay hidden">
+      <div class="panel">
+        <h2>Paused</h2>
+        <button id="resumeBtn">RESUME</button>
+        <button id="quitBtn">QUIT TO MENU</button>
+      </div>
+    </div>
+
+    <div id="matchEnd" class="overlay hidden">
+      <div class="panel">
+        <h2 id="matchResult">Match Result</h2>
+        <button id="rematchBtn">REMATCH</button>
+        <button id="menuBtn">MAIN MENU</button>
+      </div>
+    </div>
+
+    <footer id="footerNote">Turbo Soccer Arena &mdash; unofficial fan game, not affiliated with Psyonix / Epic Games / Rocket League&reg;.</footer>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
